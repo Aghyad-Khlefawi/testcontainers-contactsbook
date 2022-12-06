@@ -1,0 +1,17 @@
+POST http://localhost:5226/contacts
+Content-Type: application/json
+
+{
+    "firstName":"aghyad",
+    "lastName":"Jazaerli",
+    "emailAddress":"aghyad.jazaerli@gmail.com"
+}
+
+###
+GET http://localhost:5226/contacts
+
+###
+GET http://localhost:5226/contacts/638f807175795eb90249c6e5
+
+###
+DELETE http://localhost:5226/contacts/638f807175795eb90249c6e5
