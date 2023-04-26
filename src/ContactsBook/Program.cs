@@ -66,3 +66,5 @@ app.MapDelete("/contacts/{id}", async ([FromRoute] string id, [FromServices] IMo
 app.Run();
 
 IMongoCollection<Contact> GetContactsCollection(IMongoDatabase mongoDatabase) => mongoDatabase.GetCollection<Contact>("contacts");
+
+public partial class Program { }
