@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactsBook", "ContactsBook\ContactsBook.csproj", "{272C5783-3528-4577-B277-911F57C1A819}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsBook.FunctionTests", "ContactsBook.FunctionTests\ContactsBook.FunctionTests.csproj", "{D715C885-5F51-4642-901D-4A990BE1B948}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsBook.FunctionalTests", "ContactsBook.FunctionalTests\ContactsBook.FunctionalTests.csproj", "{D715C885-5F51-4642-901D-4A990BE1B948}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

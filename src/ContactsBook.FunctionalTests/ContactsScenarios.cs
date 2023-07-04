@@ -1,14 +1,14 @@
 using Microsoft.AspNetCore.Mvc.Testing;
+using MongoDB.Driver.Core.Connections;
 using Testcontainers.MongoDb;
 
-namespace ContactsBook.FunctionTests
+namespace ContactsBook.FunctionalTests
 {
     public class ContactsScenarios : IAsyncLifetime
     {
-        private readonly MongoDbContainer _mongoDbContainer;
-
         private ContactsBookWebFactory? _webFactory;
 
+        private readonly MongoDbContainer _mongoDbContainer;
         public ContactsScenarios()
         {
             _mongoDbContainer = new MongoDbBuilder().Build();
@@ -17,18 +17,18 @@ namespace ContactsBook.FunctionTests
         [Fact]
         public async Task CreateValidContactShouldReturnOkResponse()
         {
-            using var client = _webFactory!.CreateClient();
+            using var client = _webFactory!.CreateClient(); // Create the API client
 
-            var testContact = new Contact
+            var testContact = new Contact // Prepare the test data
             {
                 FirstName = "Test",
                 LastName = "Test",
                 EmailAddress = "Test@mail.copm",
             };
 
-            var response = await client.PostAsJsonAsync("contacts", testContact);
-            
-            Assert.True(response.IsSuccessStatusCode); 
+            var response = await client.PostAsJsonAsync("contacts", testContact); // Perform the API call
+
+            Assert.True(response.IsSuccessStatusCode); // Validate the response of the API call
         }
 
         public Task DisposeAsync()
